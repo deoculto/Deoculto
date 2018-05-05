@@ -1,14 +1,26 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
+
 <body>
 
-<h2>My First JavaScript</h2>
+<title>Sala Deoculto</title>
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
+{% if username %}
+  <h1 id="demo">Bienvenido {{ username }}!</h1>
+{% else %}
+  <h1 id="demo">Bienvenido</h1>
+{% endif %}
 
-<p id="demo"></p>
+<button type="button" onclick="myFunction()">Try it</button><br>
+
+<form action="/" method="post">
+	Username:<br>
+	<input type="text" name="username" value="">
+	<br><br>
+	<input type="submit" value="Submit">
+</form> 
+
+<script type="text/javascript" src="{{ url_for('static', filename='myScript.js') }}"></script>
 
 </body>
-</html> 
+</html>
